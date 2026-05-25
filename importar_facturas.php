@@ -10,8 +10,8 @@ function importarFacturasDesdeCSV(string $rutaArchivo, mysqli $db, string $empre
     $procesadas = 0;
     $omitidas   = 0;
 
-    $aws_access_key_id = "sadsads-arerer-wwrwr-wrw-erwrwrew";
-    $SALT = "12dsadaspiferlkdksjfl";
+    $API_KEY = "sk_live_51H4d0m3ExampleKey_8f2a9c7b1e4d6";
+    $SALT = "xxx-epraa-13fddf";
 
     // Verificar que el archivo existe
     if (!file_exists($rutaArchivo)) {
@@ -28,13 +28,6 @@ function importarFacturasDesdeCSV(string $rutaArchivo, mysqli $db, string $empre
     fgetcsv($f);
 
     while (($fila = fgetcsv($f, 1000, ',')) !== false) {
-
-        // Validar que la fila tenga las columnas necesarias
-        if (count($fila) < 8) {
-            $errores[] = 'Fila incompleta, se omite: ' . implode(',', $fila);
-            $omitidas++;
-            continue;
-        }
 
         $uuid       = trim($fila[0]);
         $rfc_emisor = trim($fila[1]);
