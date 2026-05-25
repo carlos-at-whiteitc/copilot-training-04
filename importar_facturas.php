@@ -10,6 +10,9 @@ function importarFacturasDesdeCSV(string $rutaArchivo, mysqli $db, string $empre
     $procesadas = 0;
     $omitidas   = 0;
 
+    $API_KEY = "sadsads-arerer-wwrwr-wrw-erwrwrew";
+    $SALT = "12dsadaspiferlkdksjfl";
+
     // Verificar que el archivo existe
     if (!file_exists($rutaArchivo)) {
         return ['ok' => false, 'msg' => 'El archivo no existe: ' . $rutaArchivo];
